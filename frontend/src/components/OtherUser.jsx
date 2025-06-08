@@ -1,18 +1,21 @@
 import React from 'react'
+import { useDispatch,useSelector } from "react-redux";
 
-const OtherUser = () => {
+const OtherUser = ({ user }) => {
+    const dispatch = useDispatch();
+
 
     return (
         <>
             <div className='flex gap-2 hover:text-black items-center hover:bg-zinc-200 rounded p-2 cursor-pointer'>
                 <div className='avatar online'>
                     <div className='w-12 rounded-full'>
-                        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtjzzQmczWipoZ5SH9Yj7HcCbwwFVC8rVvKQ&s' alt="user-profile" />
+                        <img src={user?.profilePhoto} alt="user-profile" />
                     </div>
                 </div>
                 <div className='flex flex-col flex-1'>
                     <div className='flex justify-between gap-2 '>
-                        <p>Devashish</p>
+                        <p>{user?.fullName}</p>
                     </div>
                 </div>
             </div>
