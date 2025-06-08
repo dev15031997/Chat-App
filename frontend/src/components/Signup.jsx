@@ -14,7 +14,15 @@ const Signup = () => {
     setUser({ ...user, gender });
   }
   const onSubmitHandler = async (e) => {
-  
+    e.preventDefault();
+
+    setUser({
+      fullName: "",
+      username: "",
+      password: "",
+      confirmPassword: "",
+      gender: "",
+    })
   }
   return (
     <div className="min-w-96 mx-auto">

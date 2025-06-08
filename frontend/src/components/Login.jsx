@@ -10,7 +10,11 @@ const Login = () => {
   // const navigate = useNavigate();
 
   const onSubmitHandler = async (e) => {
-    
+    e.preventDefault();
+    setUser({
+      username: "",
+      password: ""
+    })
   }
   return (
     <div className="min-w-96 mx-auto">
