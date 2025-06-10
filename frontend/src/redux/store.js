@@ -8,8 +8,12 @@ const store = configureStore({
     reducer:{
         user:userReducer,
         message:messageReducer,
-        socket:socketReducer,
-    }
+        socket:socketReducer
+    },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export default store;
